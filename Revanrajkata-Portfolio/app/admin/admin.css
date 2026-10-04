@@ -1,0 +1,52 @@
+.adm{--bg:#0b0b0d;--panel:#131316;--line:rgba(255,255,255,.12);--ink:#f4f4f5;--mute:#9a9aa0;--acc:#fff;--bad:#ff6b6b;--ok:#5ddc8f;min-height:100vh;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color-scheme:dark}
+.adm *{box-sizing:border-box}
+.adm button,.adm input,.adm textarea,.adm select{font:inherit;color:inherit}
+.adm a{color:inherit}
+.adm .top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.8rem 1.2rem;background:rgba(11,11,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.adm .top h1{font-size:1rem;margin:0;letter-spacing:.12em;margin-right:auto}
+.adm .tabs{display:flex;gap:.3rem;flex-wrap:wrap}
+.adm .tab{padding:.45rem .9rem;border-radius:999px;border:1px solid transparent;background:none;cursor:pointer;color:var(--mute)}
+.adm .tab.on{background:var(--ink);color:#0a0a0b}
+.adm .tab:hover:not(.on){border-color:var(--line);color:var(--ink)}
+.adm .badge{margin-left:.4rem;padding:0 .45rem;border-radius:999px;background:var(--bad);color:#fff;font-size:.72rem}
+.adm main{max-width:900px;margin:0 auto;padding:1.5rem 1.2rem 6rem}
+.adm h2{font-size:1.5rem;margin:.2rem 0 1rem}
+.adm h3{margin:0 0 .8rem;font-size:1.05rem}
+.adm .hint{color:var(--mute);font-size:.85rem;margin:.2rem 0 1rem}
+.adm .card,.adm .item,.adm .blk{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.1rem;margin-bottom:1rem}
+.adm .item{background:rgba(255,255,255,.03)}
+.adm .f{display:block;margin-bottom:.8rem}
+.adm .f>span{display:block;font-size:.78rem;color:var(--mute);margin-bottom:.25rem}
+.adm input[type=text],.adm input[type=email],.adm input[type=password],.adm input[type=url],.adm textarea,.adm select{width:100%;padding:.6rem .75rem;border-radius:10px;border:1px solid var(--line);background:#0b0b0d;outline:none}
+.adm textarea{resize:vertical;min-height:5rem}
+.adm input:focus,.adm textarea:focus,.adm select:focus{border-color:#fff}
+.adm .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+@media(max-width:640px){.adm .grid2{grid-template-columns:1fr}}
+.adm .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--line);background:none;cursor:pointer;text-decoration:none}
+.adm .btn:hover{border-color:#fff}
+.adm .btn.pri{background:var(--ink);color:#0a0a0b;border-color:var(--ink);font-weight:600}
+.adm .btn.del{color:var(--bad)}
+.adm .btn.sm{padding:.25rem .65rem;font-size:.82rem}
+.adm .btn:disabled{opacity:.5;cursor:not-allowed}
+.adm .rowh{display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem}
+.adm .rowh b{margin-right:auto}
+.adm .chk{display:flex;gap:.5rem;align-items:center;margin:.3rem 0;font-size:.9rem}
+.adm .media{display:grid;grid-template-columns:200px 1fr;gap:1rem;align-items:start;margin-bottom:.8rem}
+@media(max-width:640px){.adm .media{grid-template-columns:1fr}}
+.adm .prev{aspect-ratio:16/10;border-radius:12px;border:1px dashed var(--line);display:grid;place-items:center;color:var(--mute);font-size:.8rem;overflow:hidden;background:#0b0b0d}
+.adm .prev img,.adm .prev video{width:100%;height:100%;object-fit:contain}
+.adm .bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin-top:.5rem}
+.adm .bar i{display:block;height:100%;background:var(--ok)}
+.adm .msg{border:1px solid var(--line);border-radius:14px;padding:1rem;margin-bottom:.8rem;background:var(--panel)}
+.adm .msg.new{border-color:#fff}
+.adm .msg p{white-space:pre-wrap;margin:.5rem 0 .8rem;overflow-wrap:anywhere}
+.adm .msg small{color:var(--mute)}
+.adm .toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%);z-index:20;background:#fff;color:#0a0a0b;padding:.7rem 1.1rem;border-radius:12px;max-width:90vw;font-weight:500;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.adm .login{max-width:380px;margin:12vh auto;padding:0 1.2rem}
+.adm .err{color:var(--bad);font-size:.9rem}
+.adm .banner{border:1px solid #ffd166;background:rgba(255,209,102,.08);border-radius:14px;padding:1rem;margin-bottom:1.2rem}
+.adm .actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.adm .prose{color:var(--ink);line-height:1.7}
+.adm .prose img{max-width:100%}
+.adm .prose a{color:#8ab4ff}
+.adm input[type=date]{color-scheme:dark}

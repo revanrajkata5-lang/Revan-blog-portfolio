@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == 'revanrajkata2628@gmail.com';
+    }
+
+    // Public site content: anyone reads, only you write.
+    match /site/{doc}     { allow read: if true; allow write: if isAdmin(); }
+    match /projects/{doc} { allow read: if true; allow write: if isAdmin(); }
+
+    // Blog: visitors read only published posts; only you can read drafts or write.
+    match /posts/{doc} {
+      allow read: if resource.data.published == true || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // Contact form: anyone can SEND a message (validated), only you can read / manage them.
+    match /messages/{doc} {
+      allow create: if request.resource.data.keys().hasOnly(['name', 'email', 'message', 'createdAt', 'read'])
+        && request.resource.data.name is string    && request.resource.data.name.size() > 0    && request.resource.data.name.size() <= 100
+        && request.resource.data.email is string   && request.resource.data.email.size() > 3   && request.resource.data.email.size() <= 200
+        && request.resource.data.message is string && request.resource.data.message.size() > 0 && request.resource.data.message.size() <= 3000
+        && request.resource.data.read == false
+        && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}
